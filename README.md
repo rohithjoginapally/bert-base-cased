@@ -82,9 +82,9 @@ You can use this model directly with a pipeline for masked language modeling:
 Here is how to use this model to get the features of a given text in PyTorch:
 
 ```python
-from transformers import BertTokenizer, TFBertModel
+from transformers import BertTokenizer, BertModel
 tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
-model = TFBertModel.from_pretrained("bert-base-cased")
+model = BertModel.from_pretrained("bert-base-cased")
 text = "Replace me by any text you'd like."
 encoded_input = tokenizer(text, return_tensors='pt')
 output = model(**encoded_input)
@@ -93,9 +93,9 @@ output = model(**encoded_input)
 and in TensorFlow:
 
 ```python
-from transformers import BertTokenizer, BertModel
+from transformers import BertTokenizer, TFBertModel
 tokenizer = BertTokenizer.from_pretrained('bert-base-cased')
-model = BertModel.from_pretrained("bert-base-cased")
+model = TFBertModel.from_pretrained("bert-base-cased")
 text = "Replace me by any text you'd like."
 encoded_input = tokenizer(text, return_tensors='tf')
 output = model(encoded_input)
